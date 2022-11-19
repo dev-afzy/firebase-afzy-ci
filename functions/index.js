@@ -7,5 +7,5 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
   functions.logger.info('Hello logs!', { structuredData: true });
   const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT;
   const env = process.env.NODE_ENV;
-  response.send({ serviceAccount, env });
+  response.json(JSON.stringify({ serviceAccount, env }));
 });
